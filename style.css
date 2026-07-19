@@ -2104,3 +2104,44 @@ scroll-behavior:auto !important;
 }
 
 }
+.active{
+
+color:#ff4f93 !important;
+
+}
+
+.active::after{
+
+width:100% !important;
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(4);
+
+opacity:0;
+
+}
+
+}
+/* FINAL EFFECT */
+
+body{
+overflow-x:hidden;
+}
+
+.mainButton,
+#musicButton{
+position:relative;
+overflow:hidden;
+}
+
+.photoCard,
+.promiseCard,
+.dreamBox,
+.counterBox{
+will-change:transform;
+}
