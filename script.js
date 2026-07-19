@@ -471,3 +471,137 @@ ripple.remove();
 });
 
 });
+/* ==========================================
+   FINAL EFFECTS
+========================================== */
+
+// Love Confetti
+
+function createLoveBurst(){
+
+for(let i=0;i<30;i++){
+
+const love=document.createElement("div");
+
+love.innerHTML=Math.random()>0.5?"❤️":"🌸";
+
+love.style.position="fixed";
+
+love.style.left=(45+Math.random()*10)+"vw";
+
+love.style.top="70vh";
+
+love.style.fontSize=(18+Math.random()*18)+"px";
+
+love.style.pointerEvents="none";
+
+love.style.zIndex="9999";
+
+love.style.transition="2.5s ease-out";
+
+document.body.appendChild(love);
+
+setTimeout(()=>{
+
+love.style.transform=`translate(${(Math.random()-0.5)*500}px,-${250+Math.random()*250}px) rotate(${Math.random()*720}deg)`;
+
+love.style.opacity="0";
+
+},50);
+
+setTimeout(()=>{
+
+love.remove();
+
+},2600);
+
+}
+
+}
+
+// Trigger when opening the letter
+
+if(openButton){
+
+openButton.addEventListener("click",()=>{
+
+setTimeout(createLoveBurst,500);
+
+});
+
+}
+
+/* ==========================================
+   AUTO SHOW FINAL MESSAGE
+========================================== */
+
+const finalCard=document.querySelector(".finalCard");
+
+if(finalCard){
+
+const finalObserver=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+createLoveBurst();
+
+}
+
+});
+
+},{threshold:.6});
+
+finalObserver.observe(finalCard);
+
+}
+
+/* ==========================================
+   DOUBLE CLICK = LOVE
+========================================== */
+
+document.addEventListener("dblclick",(e)=>{
+
+const heart=document.createElement("div");
+
+heart.innerHTML="💖";
+
+heart.style.position="fixed";
+
+heart.style.left=e.clientX+"px";
+
+heart.style.top=e.clientY+"px";
+
+heart.style.fontSize="34px";
+
+heart.style.pointerEvents="none";
+
+heart.style.transition="1.5s";
+
+heart.style.zIndex="9999";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.style.transform="translateY(-120px) scale(2)";
+
+heart.style.opacity="0";
+
+},50);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},1500);
+
+});
+
+/* ==========================================
+   CONSOLE MESSAGE
+========================================== */
+
+console.log("%cMade with ❤️ by Yusuf for Sarah",
+"color:#ff4f93;font-size:22px;font-weight:bold;");
