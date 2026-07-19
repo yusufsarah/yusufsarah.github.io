@@ -1580,3 +1580,527 @@ transform:scale(1.08);
 box-shadow:0 25px 50px rgba(255,79,147,.5);
 
 }
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width:1100px){
+
+.hero h1{
+
+font-size:64px;
+
+}
+
+.hero h2{
+
+font-size:30px;
+
+}
+
+.galleryContainer{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.counterGrid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.promiseGrid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.dreamGrid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media (max-width:768px){
+
+nav{
+
+width:95%;
+
+padding:15px 20px;
+
+}
+
+nav ul{
+
+display:none;
+
+}
+
+.logo{
+
+font-size:22px;
+
+}
+
+.hero{
+
+padding-top:80px;
+
+}
+
+.hero h1{
+
+font-size:46px;
+
+line-height:1.2;
+
+}
+
+.hero h2{
+
+font-size:24px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+line-height:1.9;
+
+}
+
+.glass{
+
+padding:35px 25px;
+
+}
+
+.sectionTitle h2{
+
+font-size:38px;
+
+}
+
+.sectionTitle p{
+
+font-size:18px;
+
+}
+
+.galleryContainer{
+
+grid-template-columns:1fr;
+
+}
+
+.counterGrid{
+
+grid-template-columns:1fr;
+
+}
+
+.promiseGrid{
+
+grid-template-columns:1fr;
+
+}
+
+.dreamGrid{
+
+grid-template-columns:1fr;
+
+}
+
+.photoCard{
+
+transform:none;
+
+}
+
+.photoCard:hover{
+
+transform:translateY(-8px);
+
+}
+
+.counterBox h1{
+
+font-size:48px;
+
+}
+
+.envelope{
+
+transform:scale(.9);
+
+}
+
+.finalCard h1{
+
+font-size:48px;
+
+}
+
+.finalCard h2{
+
+font-size:26px;
+
+}
+
+.signature{
+
+font-size:22px;
+
+}
+
+footer{
+
+padding:60px 20px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.hero h2{
+
+font-size:20px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.mainButton{
+
+width:100%;
+
+padding:16px;
+
+font-size:17px;
+
+}
+
+.glass{
+
+border-radius:25px;
+
+}
+
+.loader-heart{
+
+font-size:70px;
+
+}
+
+}
+/* ==========================================
+   SMOOTH EFFECTS
+========================================== */
+
+html{
+scroll-padding-top:100px;
+}
+
+::selection{
+background:#ff69a6;
+color:#fff;
+}
+
+img{
+user-select:none;
+-webkit-user-drag:none;
+}
+
+button,
+a{
+-webkit-tap-highlight-color:transparent;
+}
+
+.mainButton,
+#musicButton{
+position:relative;
+overflow:hidden;
+}
+
+.mainButton::before,
+#musicButton::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:60%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.45),
+transparent
+);
+
+transform:skewX(-25deg);
+
+transition:1s;
+
+}
+
+.mainButton:hover::before,
+#musicButton:hover::before{
+
+left:170%;
+
+}
+
+/* ==========================================
+   GLASS HOVER
+========================================== */
+
+.glass{
+
+transition:.4s;
+
+}
+
+.glass:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 35px 70px rgba(0,0,0,.12);
+
+}
+
+/* ==========================================
+   PHOTO SHADOW
+========================================== */
+
+.photoCard{
+
+overflow:hidden;
+
+}
+
+.photoCard::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+border-radius:28px;
+
+pointer-events:none;
+
+box-shadow:inset 0 0 0 1px rgba(255,255,255,.4);
+
+}
+
+/* ==========================================
+   SOFT FADE
+========================================== */
+
+.fadeHidden{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:1s;
+
+}
+
+.fadeShow{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* ==========================================
+   FINAL TOUCH
+========================================== */
+
+body{
+
+background-attachment:fixed;
+
+}
+
+section{
+
+position:relative;
+
+z-index:2;
+
+}
+
+h1,h2,h3{
+
+letter-spacing:.5px;
+
+}
+
+p{
+
+letter-spacing:.2px;
+
+}
+/* ==========================================
+   FINAL OPTIMIZATION
+========================================== */
+
+*{
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+}
+
+body{
+text-rendering:optimizeLegibility;
+}
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+button{
+font-family:inherit;
+outline:none;
+}
+
+input,textarea{
+font-family:inherit;
+}
+
+a{
+color:inherit;
+}
+
+.hidden{
+display:none !important;
+}
+
+.visible{
+display:block !important;
+}
+
+.shadow-soft{
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.shadow-strong{
+box-shadow:0 25px 60px rgba(0,0,0,.18);
+}
+
+.round{
+border-radius:30px;
+}
+
+.blur{
+backdrop-filter:blur(20px);
+}
+
+.text-center{
+text-align:center;
+}
+
+.fade{
+transition:.4s ease;
+}
+
+.scale:hover{
+transform:scale(1.04);
+}
+
+.rotate:hover{
+transform:rotate(2deg);
+}
+
+.lift:hover{
+transform:translateY(-8px);
+}
+
+.glow{
+box-shadow:0 0 25px rgba(255,105,180,.35);
+}
+
+footer{
+overflow:hidden;
+position:relative;
+}
+
+footer::before{
+
+content:"❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️";
+
+position:absolute;
+
+left:-20%;
+
+bottom:20px;
+
+font-size:22px;
+
+opacity:.08;
+
+letter-spacing:20px;
+
+white-space:nowrap;
+
+animation:footerMove 18s linear infinite;
+
+}
+
+@keyframes footerMove{
+
+from{
+
+transform:translateX(0);
+
+}
+
+to{
+
+transform:translateX(35%);
+
+}
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+*{
+
+animation:none !important;
+
+transition:none !important;
+
+scroll-behavior:auto !important;
+
+}
+
+}
